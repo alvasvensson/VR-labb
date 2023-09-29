@@ -12,6 +12,11 @@ public class bulletController : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(transform.forward * force, ForceMode.Impulse);
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        Destroy(this.gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
